@@ -1,1 +1,62 @@
 /* You can add global styles to this file, and also import other style files */
+
+$app-blue: #4f70b5;
+$solid-black: rgba(0, 0, 0, 1);
+
+@font-face {
+  font-family: HarmoniaRegular;
+  src: url("./assets/fonts/HarmoniaSansProCyr-Regular.otf") format("opentype");
+}
+
+* {
+  font-family: HarmoniaRegular, Verdana, cursive;
+  transition: 0.5s ease-in-out;
+}
+
+html, body {
+  overflow: hidden;
+}
+
+/*---------------------------------------------/
+    Application Buttons
+/---------------------------------------------*/
+
+.btn {
+    padding: 10px;
+    font-size: 15px;
+    border: 2px solid rgba(0, 0, 0, 1);
+    border-radius: 0;
+    background-color: white;
+    color: black;
+    outline: none;
+    cursor: pointer;
+
+    &:hover {
+        background-color: rgba(0, 0, 0, 1);
+        color: white;
+    }
+
+    &.btn-primary {
+        border-color: $app-blue;
+        color: $app-blue;
+
+        &:hover {
+            color: white;
+            background-color: $app-blue;
+        }
+    }
+}
+
+/*---------------------------------------------/
+    Application Links
+/---------------------------------------------*/
+.link {
+    color: $app-blue;
+    text-decoration: none;
+    display: inline-block;
+    padding: 5px;
+
+    &:hover {
+        text-decoration: underline;
+    }
+}

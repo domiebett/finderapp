@@ -1,0 +1,40 @@
+<div class="container">
+  <div class="welcome">
+    <h3 class="welcome-info">Welcome back</h3>
+    <p class="welcome-info">Please fill your login details</p>
+  </div>
+  <div class="form-holder">
+    <h3 class="title">Login</h3>
+
+    <form name="form" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm" autocomplete="off" novalidate>
+
+      <div class="form-group">
+        <label for="email">Email *</label>
+        <input id="email" type="text" class="form-control" name="email" [(ngModel)]="model.email" #email="ngModel" [ngClass]="{ 'is-invalid': f.submitted && email.invalid }"
+          placeholder="Enter your email e.g john@example.com"
+          required email />
+        <div *ngIf="f.submitted && email.invalid" class="invalid-feedback">
+          <div *ngIf="email.errors.required">Email is required</div>
+          <div *ngIf="email.errors.email">Email must be a valid email address</div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="password">Password *</label>
+        <input id="password" type="password" class="form-control" name="password" [(ngModel)]="model.password" #password="ngModel" [ngClass]="{ 'is-invalid': f.submitted && password.invalid }"
+          placeholder="Enter your password"
+          required minlength="6" />
+        <div *ngIf="f.submitted && password.invalid" class="invalid-feedback">
+          <div *ngIf="password.errors.required">Password is required</div>
+          <div *ngIf="password.errors.minlength">Password must be at least 6 characters</div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <button class="btn btn-primary" [ngClass]="{ 'disabled': (!f.form.valid) }">Login</button>
+        <a class="link" [routerLink]="['/signup']">Don't have an account? Signup.</a>
+      </div>
+
+    </form>
+  </div>
+</div>
