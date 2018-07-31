@@ -1,8 +1,9 @@
 .container {
   display: inline-flex;
-  width: 60vw;
-  height: 50vh;
-  margin: 25vh 20vw 0 20vw;
+  width: 70vw;
+  height: 60vh;
+  min-height: 300px;
+  margin: 20vh 15vw 0 15vw;
   padding: 0;
   box-shadow: 0 0 5px gray;
 
@@ -99,5 +100,30 @@
   .link {
     display: block;
     margin-top: 10px;
+  }
+}
+
+@media (max-width: 900px) {
+  .container {
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+  }
+}
+
+@media (max-width: 600px) {
+  .welcome {
+    display: none;
+  }
+
+  .form-holder {
+    width: 100% !important;
+    float: none;
+    overflow: scroll;
+  }
+
+  button {
+    width: 100% !important;
   }
 }

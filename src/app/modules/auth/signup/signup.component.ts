@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-import { AuthService } from '../../../_services/auth.service';
+import { AuthService } from '../../../_services/http/auth.service';
 
 @Component({
   selector: 'app-signup',
@@ -21,8 +21,6 @@ export class SignupComponent implements OnInit {
       this.model['username'],
       this.model['email'],
       this.model['password']
-    ).toPromise().then(response => {
-      console.log(response);
-    });
+    ).subscribe((response) => console.log('Signed up successfully'));
   }
 }

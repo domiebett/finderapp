@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
-import {AuthService} from '../../../_services/auth.service';
+import {AuthService} from '../../../_services/http/auth.service';
+import {NotificationService} from '../../../_services/application/notification.service';
 
 @Component({
   selector: 'app-login',
@@ -11,7 +12,10 @@ export class LoginComponent implements OnInit {
 
   model: any = {};
 
-  constructor(private authService: AuthService) { }
+  constructor(
+    private authService: AuthService,
+    private notificationService: NotificationService
+  ) { }
 
   ngOnInit() {
   }
@@ -20,8 +24,9 @@ export class LoginComponent implements OnInit {
     this.authService.login(
       this.model['email'],
       this.model['password']
-    ).toPromise().then(response => {
-      console.log(response);
+    ).subscribe((response) => {
+      console.log('Logged in successfully');
+      this.notificationService.successToast('Logged in successfully');
     });
   }
 

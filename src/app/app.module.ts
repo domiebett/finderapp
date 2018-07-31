@@ -1,18 +1,21 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import {ErrorHandler, NgModule} from '@angular/core';
 import { HttpClientModule} from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AuthModule } from './modules/auth/auth.module';
 
 import { HTTP_INTERCEPTORS, HttpClient } from '@angular/common/http';
-import { ApiInterceptorService } from './_services/api-interceptor.service';
+import { ApiRouteInterceptor } from './_services/interceptors/api-route.interceptor';
 
 import { AppComponent } from './app.component';
+import {ErrorsHandler} from './_services/handlers/errors.handler';
+import { ToastComponent } from './_directives/alert/toast.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    ToastComponent
   ],
   imports: [
     BrowserModule,
@@ -23,10 +26,15 @@ import { AppComponent } from './app.component';
   providers: [
     {
       provide: HTTP_INTERCEPTORS,
-      useClass: ApiInterceptorService,
+      useClass: ApiRouteInterceptor,
       multi: true,
+    },
+    {
+      provide: ErrorHandler,
+      useClass: ErrorsHandler
     }
   ],
   bootstrap: [AppComponent]
 })
+
 export class AppModule { }

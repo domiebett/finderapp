@@ -2,10 +2,10 @@ import { Injectable } from '@angular/core';
 import {HttpEvent, HttpInterceptor, HttpHandler, HttpRequest} from '@angular/common/http';
 import { Observable } from 'rxjs';
 
-import { environment } from './../../environments/environment';
+import { environment } from '../../../environments/environment';
 
 @Injectable()
-export class ApiInterceptorService implements HttpInterceptor {
+export class ApiRouteInterceptor implements HttpInterceptor {
 
   apiUrl: string;
 
@@ -13,8 +13,8 @@ export class ApiInterceptorService implements HttpInterceptor {
     this.apiUrl = environment.apiUrl;
   }
 
-  intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
-    const apiRequest = req.clone({ url: `${this.apiUrl}/${req.url}` });
+  intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
+    const apiRequest = request.clone({ url: `${this.apiUrl}/${request.url}` });
     return next.handle(apiRequest);
   }
 }
