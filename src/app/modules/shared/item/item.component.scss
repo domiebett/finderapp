@@ -1,0 +1,16 @@
+.item-card {
+  border-radius: 5px;
+  width: 80%;
+  height: 250px;
+  .card-footer {
+    button {
+      width: 90%;
+      margin-right: 5%;
+    }
+  }
+  .card-content {
+    max-height: 200px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}

@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import {ErrorHandler, NgModule} from '@angular/core';
 import { HttpClientModule} from '@angular/common/http';
+import { ItemsModule } from './modules/items/items.module';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AuthModule } from './modules/auth/auth.module';
@@ -20,6 +21,7 @@ import { ToastComponent } from './_directives/alert/toast.component';
   imports: [
     BrowserModule,
     AuthModule,
+    ItemsModule,
     AppRoutingModule,
     HttpClientModule
   ],

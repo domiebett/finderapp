@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 
 import {AuthService} from '../../../_services/http/auth.service';
@@ -14,7 +15,8 @@ export class LoginComponent implements OnInit {
 
   constructor(
     private authService: AuthService,
-    private notificationService: NotificationService
+    private notificationService: NotificationService,
+    private router: Router
   ) { }
 
   ngOnInit() {
@@ -25,7 +27,7 @@ export class LoginComponent implements OnInit {
       this.model['email'],
       this.model['password']
     ).subscribe((response) => {
-      console.log('Logged in successfully');
+      this.router.navigate(['/items']);
       this.notificationService.successToast('Logged in successfully');
     });
   }

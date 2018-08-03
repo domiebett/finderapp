@@ -24,11 +24,16 @@ export class ToastComponent {
     });
   }
 
+  /**
+   * Adds toast messages
+   *
+   * @param alert
+   */
   setToasts(alert: Alert) {
     if (!alert.message) {
       this.clearAlerts();
     } else {
-      if(this.toasts.length > this.limit) {
+      if (this.toasts.length > this.limit) {
         this.toasts.shift();
       }
       this.toasts.push(alert);

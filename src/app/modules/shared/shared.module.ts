@@ -1,13 +1,11 @@
+import { RouterModule } from '@angular/router';
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ItemComponent } from './item/item.component';
+import { ItemsNavigatorComponent } from './items-navigator/items-navigator.component';
 
 @NgModule({
-  imports: [
-    CommonModule, FormsModule, ReactiveFormsModule
-  ],
-  exports: [
-  ],
-  declarations: [],
+  imports: [RouterModule],
+  exports: [ItemComponent, ItemsNavigatorComponent],
+  declarations: [ItemComponent, ItemsNavigatorComponent],
 })
 export class SharedModule { }

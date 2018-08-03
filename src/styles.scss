@@ -2,7 +2,6 @@
 
 $app-blue: #4f70b5;
 $solid-black: rgba(0, 0, 0, 1);
-
 @font-face {
   font-family: HarmoniaRegular;
   src: url("./assets/fonts/HarmoniaSansProCyr-Regular.otf") format("opentype");
@@ -13,7 +12,8 @@ $solid-black: rgba(0, 0, 0, 1);
   transition: 0.5s ease-in-out;
 }
 
-html, body {
+html,
+body {
   overflow: hidden;
   margin: 0;
   padding: 0;
@@ -24,41 +24,57 @@ html, body {
 /---------------------------------------------*/
 
 .btn {
-    padding: 10px;
-    font-size: 15px;
-    border: 2px solid rgba(0, 0, 0, 1);
-    border-radius: 0;
-    background-color: white;
-    color: black;
-    outline: none;
-    cursor: pointer;
-
+  padding: 10px;
+  font-size: 15px;
+  border: 2px solid rgba(0, 0, 0, 1);
+  border-radius: 0;
+  background-color: white;
+  color: black;
+  outline: none;
+  cursor: pointer;
+  &:hover {
+    background-color: rgba(0, 0, 0, 1);
+    color: white;
+  }
+  &.btn-primary {
+    border-color: $app-blue;
+    color: $app-blue;
     &:hover {
-        background-color: rgba(0, 0, 0, 1);
-        color: white;
+      color: white;
+      background-color: $app-blue;
     }
-
-    &.btn-primary {
-        border-color: $app-blue;
-        color: $app-blue;
-
-        &:hover {
-            color: white;
-            background-color: $app-blue;
-        }
-    }
+  }
 }
 
 /*---------------------------------------------/
     Application Links
 /---------------------------------------------*/
-.link {
-    color: $app-blue;
-    text-decoration: none;
-    display: inline-block;
-    padding: 5px;
 
-    &:hover {
-        text-decoration: underline;
-    }
+.link {
+  color: $app-blue;
+  text-decoration: none;
+  display: inline-block;
+  padding: 5px;
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+/*---------------------------------------------/
+    Application Cards
+/---------------------------------------------*/
+
+.card {
+  position: relative;
+  padding: 20px;
+  margin: 10px;
+  box-shadow: 0 0 5px gray;
+  .card-footer {
+    position: absolute;
+    width: 100%;
+    height: auto;
+    bottom: 0;
+    left: 0;
+    padding: 10px;
+  }
 }
