@@ -1,0 +1,56 @@
+@import '../../../../assets/partials/colors';
+
+$button-translucency: 0.9;
+
+button {
+    position: relative;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+
+    span {
+        position: absolute;
+        margin: 0;
+        padding: 0;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: inherit;
+    }
+}
+
+.btn {
+    padding: 15px;
+    font-size: 14px;
+    border-width: 2px;
+    border-style: solid;
+    border-radius: 0;
+    outline: none;
+    cursor: pointer;
+    transition: 0s ease-in-out;
+
+    &.btn-primary {
+      border-color: $app-blue;
+      color: $app-blue;
+      &:hover {
+        color: white;
+        background-color: $app-blue;
+      }
+    }
+    &.btn-default {
+        border-color: $app-black;
+        background-color: white;
+        color: $app-black;
+        &:hover {
+            background-color: $app-black;
+            color: $app-white;
+        }
+    }
+    &.btn-translucent {
+        opacity: $button-translucency;
+
+        &:hover {
+            opacity: $button-translucency;
+        }
+    }
+  }

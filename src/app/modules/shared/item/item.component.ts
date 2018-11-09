@@ -1,6 +1,8 @@
 import { Component, OnInit, Input } from '@angular/core';
 
 import { Item } from '../../../_models/item';
+import { Color } from '../../../_models/color';
+import { Button } from '../../../_models/button';
 
 @Component({
   selector: 'app-item',
@@ -10,7 +12,8 @@ import { Item } from '../../../_models/item';
 export class ItemComponent implements OnInit {
 
   @Input() item: Item;
-  mainImageUrl: string;
+  mainImageUrl: string = '../../../../assets/images/no_image.png';
+  actionButtonClass: Button = Button.PrimaryTranslucent;
 
   constructor() { }
 

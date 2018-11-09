@@ -1,13 +1,16 @@
 .item-card {
-  border-radius: 5px;
-  width: 80%;
+  border-radius: 0 5px 0 10px;
+  width: 90%;
+  max-width: 250px;
+  margin: 10 auto;
   padding: 10px 0 0 0;
-  height: 250px;
+  height: 200px;
   overflow: hidden;
   .card-footer {
-    button {
-      width: 90%;
-      margin-right: 5%;
+    .button-container {
+      width: 95%;
+      margin: 5px auto;
+      overflow: hidden;
     }
   }
   .card-content {
@@ -16,6 +19,7 @@
     overflow: hidden;
     text-overflow: ellipsis;
     background-size: cover !important;
+    background-position: center !important;
   }
 
   .h3 {
