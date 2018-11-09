@@ -12,6 +12,7 @@ import { Button } from '../../../_models/button';
 export class ItemComponent implements OnInit {
 
   @Input() item: Item;
+  
   mainImageUrl: string = '../../../../assets/images/no_image.png';
   actionButtonClass: Button = Button.PrimaryTranslucent;
 
@@ -21,5 +22,12 @@ export class ItemComponent implements OnInit {
     if (this.item.images.length > 0) {
       this.mainImageUrl = this.item.images[0].url;
     }
+  }
+
+  /**
+   * Action once the view item button is cliced.
+   */
+  onActionButtonClick() {
+    console.log('button clicked');
   }
 }

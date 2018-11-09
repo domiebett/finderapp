@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, Output } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { text } from '@angular/core/src/render3/instructions';
 
 import { Color } from '../../../_models/color';
@@ -16,9 +16,15 @@ export class ButtonComponent implements OnInit {
   @Input() textColor: Color = Color.White;
   @Input() buttonClassName: Button = Button.Default;
 
+  @Output() clicked = new EventEmitter();
+
   constructor() { }
 
   ngOnInit() {
+  }
+
+  onClick() {
+    this.clicked.emit();
   }
 
 }
