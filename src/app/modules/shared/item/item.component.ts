@@ -10,10 +10,13 @@ import { Item } from '../../../_models/item';
 export class ItemComponent implements OnInit {
 
   @Input() item: Item;
+  mainImageUrl: string;
 
   constructor() { }
 
   ngOnInit() {
+    if (this.item.images.length > 0) {
+      this.mainImageUrl = this.item.images[0].url;
+    }
   }
-
 }

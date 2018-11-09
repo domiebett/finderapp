@@ -1,7 +1,6 @@
 <div class="card item-card">
-  <div class="card-content">
-    <h3>{{ item.name }}</h3>
-    <p>{{ item.description }}</p>
+  <span class="h3">{{ item.name }}</span>
+  <div [style.background]="'url(' + mainImageUrl + ')'" class="card-content">
   </div>
   <div class="card-footer">
     <button class="btn btn-primary">View Item</button>

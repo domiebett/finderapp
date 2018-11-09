@@ -1,7 +1,9 @@
 .item-card {
   border-radius: 5px;
   width: 80%;
+  padding: 10px 0 0 0;
   height: 250px;
+  overflow: hidden;
   .card-footer {
     button {
       width: 90%;
@@ -9,8 +11,18 @@
     }
   }
   .card-content {
-    max-height: 200px;
+    position: relative;
+    height: 232px;
     overflow: hidden;
     text-overflow: ellipsis;
+    background-size: cover !important;
+  }
+
+  .h3 {
+    margin-left: 10px;
+    font-weight: bold;
+    text-decoration: underline;
+    color: #4f70b5;
+    margin-bottom: 5px;
   }
 }
