@@ -1,0 +1,6 @@
+<div class="search_button" tabindex="1">
+  <img (click)="onSubmit()" src="../../../../assets/images/search.svg" alt="search" />
+  <form (ngSubmit)="onSubmit()">
+    <input [(ngModel)]="searchText" class="search_input" type="search" name="search" autocomplete="off"/>
+  </form>
+</div>

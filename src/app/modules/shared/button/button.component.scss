@@ -38,11 +38,11 @@ button {
       }
     }
     &.btn-default {
-        border-color: $app-black;
+        border-color: $app-light-gray;
         background-color: white;
-        color: $app-black;
+        color: $app-light-gray;
         &:hover {
-            background-color: $app-black;
+            background-color: $app-blue;
             color: $app-white;
         }
     }
@@ -52,5 +52,9 @@ button {
         &:hover {
             opacity: $button-translucency;
         }
+    }
+
+    &.btn-rounded {
+        border-radius: 50%;
     }
   }

@@ -1,12 +1,13 @@
 import { BrowserModule } from '@angular/platform-browser';
 import {ErrorHandler, NgModule} from '@angular/core';
 import { HttpClientModule} from '@angular/common/http';
-import { ItemsModule } from './modules/items/items.module';
+import { HTTP_INTERCEPTORS, HttpClient } from '@angular/common/http';
 
+import { ItemsModule } from './modules/items/items.module';
 import { AppRoutingModule } from './app-routing.module';
 import { AuthModule } from './modules/auth/auth.module';
+import { NavigationModule } from './modules/navigation/navigation.module'
 
-import { HTTP_INTERCEPTORS, HttpClient } from '@angular/common/http';
 import { ApiRouteInterceptor } from './_services/interceptors/api-route.interceptor';
 
 import { AppComponent } from './app.component';
@@ -22,6 +23,7 @@ import { ToastComponent } from './_directives/alert/toast.component';
     BrowserModule,
     AuthModule,
     ItemsModule,
+    NavigationModule,
     AppRoutingModule,
     HttpClientModule
   ],

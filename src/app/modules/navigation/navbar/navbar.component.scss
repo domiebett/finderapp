@@ -1,0 +1,100 @@
+@import './../../../../assets/partials/colors';
+
+$navigation-padding: 25px;
+
+header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: auto;
+    max-height: 80px;
+    width: 100vw;
+    background-color: $app-dark-gray;
+}
+
+nav {
+    position: relative;
+    height: auto;
+    max-height: 80px;
+    width: 100vw;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 3fr 1fr;
+    color: white;
+
+    ul {
+        margin: 0;
+    }
+
+    .nav_container {
+        display: inline-block;
+    }
+
+    .icon_container {
+        padding: $navigation-padding;
+        cursor: default;
+    }
+
+    .navigation_links {
+        display: inline-block;
+        .navigation_link {
+            display: inline-block;
+            list-style-type: none;
+            padding: $navigation-padding;
+            cursor: pointer;
+
+            &:hover {
+                background-color: $app-black;
+            }
+        }
+    }
+
+    .user {
+        position: relative;
+        padding: $navigation-padding;
+
+        .user_items {
+            display: inline-block;
+            width: 100%;
+        }
+
+        .user_name {
+            text-align: right;
+            cursor: pointer;
+        }
+
+        .user_options {
+            visibility: hidden;
+            position: absolute;
+            top: 100%;
+            right: 10px;
+            width: 150px;
+            background-color: $app-white;
+            color: $app-dark-gray;
+            box-shadow: 0 0 5px $app-light-gray;
+            transition: none;
+
+            li {
+                visibility: hidden;
+                list-style-type: none;
+                padding: 10px;
+                background-color: $app-white;
+                color: $app-dark-gray;
+                cursor: pointer;
+                transition: none;
+            }
+        }
+
+        &:hover{
+            .user_options {
+                visibility: visible;
+                z-index: 50;
+
+                li {
+                    visibility: visible;
+                }
+            }
+        }
+    }
+}

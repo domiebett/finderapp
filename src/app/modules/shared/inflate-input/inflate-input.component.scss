@@ -1,0 +1,70 @@
+@import '../../../../assets/partials/colors';
+
+.search_button {
+    float: right;
+    height: 30px;
+    width: 30px;
+    border: 2px solid $app-light-gray;
+    border-radius: 20px;
+    overflow: hidden;
+    outline: none;
+
+    img {
+        height: 15px;
+        width: 15px;
+        margin-top: 7.5px;
+        margin-right: 7.5px;
+        float: right;
+    }
+
+    .search_input {
+        display: block;
+        margin: 0;
+        padding-left: 20px;
+        width: calc(100% - 30px);
+        height: 30px;
+        min-height: 30px;
+        font-size: 15px;
+        float: left;
+        visibility: hidden;
+        outline: none;
+        border: none;
+    }
+
+    &:hover {
+        width: 90%;
+        
+        .search_input {
+            visibility: visible;
+        }
+    }
+
+    &:focus-within {
+        width: 90%;
+        
+        .search_input {
+            visibility: visible;
+        }
+    }
+
+}
+
+@media (max-width: 700px) {
+    .search_button {
+        float: none;
+        width: 100%;
+        transition: none;
+
+        &:hover {
+            width: 100%;
+        }
+
+        &:focus-within {
+            width: 100%;
+        }
+
+        .search_input {
+            visibility: visible;
+        }
+    }
+}

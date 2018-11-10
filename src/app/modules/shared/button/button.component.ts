@@ -13,7 +13,6 @@ export class ButtonComponent implements OnInit {
 
   @Input() text: string;
   @Input() backgroundOpacity: number;
-  @Input() textColor: Color = Color.White;
   @Input() buttonClassName: Button = Button.Default;
 
   @Output() clicked = new EventEmitter();
@@ -23,6 +22,9 @@ export class ButtonComponent implements OnInit {
   ngOnInit() {
   }
 
+  /**
+   * Emits event when clicked
+   */
   onClick() {
     this.clicked.emit();
   }

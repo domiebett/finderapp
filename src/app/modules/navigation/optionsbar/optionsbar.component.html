@@ -1,0 +1,18 @@
+<div class="options_container">
+  <div class="buttons">
+      <app-button [text]="'+'" [buttonClassName]="addButtonClass">
+      </app-button>
+  </div>
+
+  <div class="items_navigator">
+    <app-items-navigator></app-items-navigator>
+  </div>
+
+  <div class="desktop_search">
+    <app-inflate-input (submitted)="search($event)"></app-inflate-input>
+  </div>
+</div>
+
+<div class="mobile_search">
+  <app-inflate-input (submitted)="search($event)"></app-inflate-input>
+</div>
