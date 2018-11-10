@@ -4,7 +4,7 @@
       FinderApp
     </div>
 
-    <div class="nav_container navigation_links_container">
+    <div class="desktop_view nav_container navigation_links_container">
       <ul class="navigation_links">
         <li class="navigation_link">items</li>
         <li class="navigation_link">manage account</li>
@@ -12,7 +12,7 @@
       </ul>
     </div>
 
-    <div class="nav_container user_container">
+    <div class="desktop_view nav_container user_container">
       <div class="user">
         <div class="user_items user_name">Dominic Bett</div>
         <ul class="user_items dropdown user_options">
@@ -21,6 +21,18 @@
           <li>logout</li>
         </ul>
       </div>
+    </div>
+    
+    <div class="mobile_view nav_container">
+      <span (click)="toggleNavigationLinks()">|||</span>
+      <ul *ngIf="displayNavigationLinks" class="navigation_links">
+        <li class="navigation_link">items</li>
+        <li class="navigation_link">manage account</li>
+        <li class="navigation_link">analytics</li>
+        <li class="navigation_link">profile</li>
+        <li class="navigation_link">settings</li>
+        <li class="navigation_link">logout</li>
+      </ul>
     </div>
   </nav>
 </header>

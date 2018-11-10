@@ -22,12 +22,17 @@ nav {
     display: grid;
     grid-template-columns: 1fr 3fr 1fr;
     color: white;
+    z-index: 100;
+
+    .mobile_view {
+        display: none;
+    }
 
     ul {
         margin: 0;
     }
 
-    .nav_container {
+    .desktop_view.nav_container {
         display: inline-block;
     }
 
@@ -36,7 +41,7 @@ nav {
         cursor: default;
     }
 
-    .navigation_links {
+    .desktop_view .navigation_links {
         display: inline-block;
         .navigation_link {
             display: inline-block;
@@ -50,7 +55,7 @@ nav {
         }
     }
 
-    .user {
+    .desktop_view .user {
         position: relative;
         padding: $navigation-padding;
 
@@ -93,6 +98,50 @@ nav {
 
                 li {
                     visibility: visible;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 800px) {
+    nav {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+
+        .desktop_view {
+            display: none !important;
+        }
+
+        .mobile_view {
+            display: block;
+
+            &.nav_container {
+
+                padding: $navigation-padding;
+
+                span {
+                    float: right;
+                    cursor: pointer;
+                }
+                
+                .navigation_links {
+                    position: absolute;
+                    top: 100%;
+                    left: 0;
+                    width: 100%;
+                    height: calc(100vh - 65px);
+                    background-color: rgba(0, 0, 0, 0.5);
+                    padding: 0;
+                    margin: 0;
+
+                    .navigation_link {
+                        display: block;
+                        padding: 20px 20px;
+                        text-align: center;
+                        background-color: $app-dark-gray;
+                        cursor: pointer;
+                    }
                 }
             }
         }

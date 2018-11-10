@@ -7,9 +7,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavbarComponent implements OnInit {
 
+  displayNavigationLinks = false;
+
   constructor() { }
 
   ngOnInit() {
+  }
+
+  toggleNavigationLinks() {
+    this.displayNavigationLinks = !this.displayNavigationLinks;
   }
 
 }
