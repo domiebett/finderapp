@@ -1,19 +1,24 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+
+import { AuthComponent } from '../auth.component';
 
 import { AuthService } from '../../../_services/http/auth.service';
+import {NotificationService} from '../../../_services/application/notification.service';
 
 @Component({
   selector: 'app-signup',
   templateUrl: './signup.component.html',
   styleUrls: ['../auth.scss', './signup.component.scss']
 })
-export class SignupComponent implements OnInit {
+export class SignupComponent extends AuthComponent {
 
-  model: any = {};
-
-  constructor(private authService: AuthService) { }
-
-  ngOnInit() {
+  constructor(
+    authService: AuthService,
+    notificationService: NotificationService,
+    router: Router
+  ) {
+    super(authService, notificationService, router);
   }
 
   onSubmit() {

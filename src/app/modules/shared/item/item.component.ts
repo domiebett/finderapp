@@ -1,7 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 
 import { Item } from '../../../_models/item';
-import { Color } from '../../../_models/color';
 import { Button } from '../../../_models/button';
 
 @Component({

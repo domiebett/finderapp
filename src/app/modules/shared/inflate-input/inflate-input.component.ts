@@ -1,4 +1,4 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
 
 @Component({
   selector: 'app-inflate-input',
@@ -7,8 +7,9 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 })
 export class InflateInputComponent implements OnInit {
 
+  @Input() minChars: number = 1;
   @Output() submitted = new EventEmitter();
-  searchText: string;
+  searchText: string = '';
 
   constructor() { }
 
@@ -16,6 +17,9 @@ export class InflateInputComponent implements OnInit {
   }
 
   onSubmit() {
+    if (this.searchText.length < this.minChars) {
+      alert(`Your input must be more than ${this.minChars} characters.`)
+    }
     this.submitted.emit(this.searchText);
   }
 

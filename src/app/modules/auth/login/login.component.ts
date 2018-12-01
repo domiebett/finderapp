@@ -1,25 +1,25 @@
+import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { Component, OnInit } from '@angular/core';
+
+import { AuthComponent } from '../auth.component';
 
 import {AuthService} from '../../../_services/http/auth.service';
 import {NotificationService} from '../../../_services/application/notification.service';
+
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['../auth.scss', './login.component.scss']
 })
-export class LoginComponent implements OnInit {
-
-  model: any = {};
+export class LoginComponent extends AuthComponent {
 
   constructor(
-    private authService: AuthService,
-    private notificationService: NotificationService,
-    private router: Router
-  ) { }
-
-  ngOnInit() {
+    authService: AuthService,
+    notificationService: NotificationService,
+    router: Router
+  ) {
+    super(authService, notificationService, router);
   }
 
   onSubmit() {
@@ -31,5 +31,4 @@ export class LoginComponent implements OnInit {
       this.notificationService.successToast('Logged in successfully');
     });
   }
-
 }
