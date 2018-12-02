@@ -13,7 +13,7 @@ export class ItemComponent implements OnInit {
   @Input() item: Item;
   
   mainImageUrl: string = '../../../../assets/images/no_image.png';
-  actionButtonClass: Button = Button.PrimaryTranslucent;
+  actionButtonClass: Button = Button.PrimaryLightTranslucent;
 
   constructor() { }
 

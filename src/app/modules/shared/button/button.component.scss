@@ -29,6 +29,16 @@ button {
     transition: 0s ease-in-out;
 
     &.btn-primary {
+        border-color: $app-blue;
+        color: $app-white;
+        background-color: $app-blue;
+
+        &:hover {
+            border-color: $app-blue-darker;
+            background-color: $app-blue-darker;
+        }
+    }
+    &.btn-primary-light {
       border-color: $app-blue;
       color: $app-blue;
       &:hover {

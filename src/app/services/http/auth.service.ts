@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 
+import { AuthEmitter } from '../emitters/auth.emitter';
+
 import { HttpLoginResponse } from '../../_models/interfaces/auth';
 import { StorageUtils } from '../../_utils/storage.utils';
 
@@ -11,7 +13,7 @@ import { map } from 'rxjs/operators';
 })
 export class AuthService {
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private authEmitter: AuthEmitter) { }
 
   /**
    * Service method to login a user
@@ -24,6 +26,7 @@ export class AuthService {
       .pipe(
         map((result) => {
           StorageUtils.storeLoginDetails(result);
+          this.authEmitter.announceLogin(result.user);
         })
       );
   }

@@ -1,8 +1,8 @@
 import { Router } from '@angular/router';
 import { Component } from '@angular/core';
 
-import {AuthService} from '../../_services/http/auth.service';
-import {NotificationService} from '../../_services/application/notification.service';
+import {AuthService} from '../../services/http/auth.service';
+import {NotificationService} from '../../services/application/notification.service';
 
 import { Button, ButtonHeight } from '../../_models/enums/button';
 

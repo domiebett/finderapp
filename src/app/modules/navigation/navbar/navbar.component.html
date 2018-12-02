@@ -13,8 +13,8 @@
     </div>
 
     <div class="desktop_view nav_container user_container">
-      <div class="user">
-        <div class="user_items user_name">Dominic Bett
+      <div *ngIf="loggedInUser" class="user logged_in">
+        <div class="user_items user_name"> {{ loggedInUser.username }}
           <span class="user_down_caret">&#9660;</span>
         </div>
         <ul class="user_items dropdown user_options">
@@ -22,6 +22,12 @@
           <li>settings</li>
           <li (click)="logout()">logout</li>
         </ul>
+      </div>
+
+      <div *ngIf="!loggedInUser" class="user logged_out">
+        <app-button [text]="'Login'" [buttonClassName]="loginButtonClass"
+                    [buttonHeight]="loginButtonHeight" (clicked)="navigateToLoginPage()">
+        </app-button>
       </div>
     </div>
     

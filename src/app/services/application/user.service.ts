@@ -1,20 +1,31 @@
 import { Injectable } from '@angular/core';
 
+import { NotificationService } from './notification.service';
+
+import { AuthEmitter } from '../emitters/auth.emitter';
+
 import { User } from '../../_models/interfaces/user';
 
 @Injectable({
   providedIn: 'root'
 })
-export class AuthService {
+export class UserService {
 
-  constructor() { }
+  constructor(
+    private notificationService: NotificationService,
+    private authEmitter: AuthEmitter) { }
 
   /**
-   * Clears users access token
+   * Clears users access token and emits event
    */
   logout() {
     localStorage.removeItem('access_token');
+
     localStorage.removeItem('user');
+
+    this.authEmitter.announceLogout();
+
+    this.notificationService.successToast('You have successfully logged out');
   }
 
   /**

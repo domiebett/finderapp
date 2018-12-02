@@ -11,10 +11,12 @@ import { NavigationModule } from './modules/navigation/navigation.module'
 import { AppComponent } from './app.component';
 import { ToastComponent } from './_directives/alert/toast.component';
 
-import { AuthGuard } from './_services/guards/auth.guard';
+import { AuthGuard } from './services/guards/auth.guard';
 
-import {ErrorsHandler} from './_services/handlers/errors.handler';
-import { ApiRouteInterceptor } from './_services/interceptors/api-route.interceptor';
+import { AuthEmitter } from './services/emitters/auth.emitter';
+
+import {ErrorsHandler} from './services/handlers/errors.handler';
+import { ApiRouteInterceptor } from './services/interceptors/api-route.interceptor';
 
 
 @NgModule({
@@ -32,6 +34,7 @@ import { ApiRouteInterceptor } from './_services/interceptors/api-route.intercep
   ],
   providers: [
     AuthGuard,
+    AuthEmitter,
     {
       provide: HTTP_INTERCEPTORS,
       useClass: ApiRouteInterceptor,

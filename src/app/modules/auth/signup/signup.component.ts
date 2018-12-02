@@ -3,8 +3,8 @@ import { Router } from '@angular/router';
 
 import { AuthComponent } from '../auth.component';
 
-import { AuthService } from '../../../_services/http/auth.service';
-import {NotificationService} from '../../../_services/application/notification.service';
+import { AuthService } from '../../../services/http/auth.service';
+import {NotificationService} from '../../../services/application/notification.service';
 
 @Component({
   selector: 'app-signup',
