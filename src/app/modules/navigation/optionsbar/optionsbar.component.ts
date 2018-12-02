@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-import { Button } from '../../../_models/button';
+import { Button } from '../../../_models/enums/button';
 
 @Component({
   selector: 'app-optionsbar',

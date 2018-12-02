@@ -1,6 +1,6 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
-import { Button, ButtonHeight } from '../../../_models/button';
+import { Button, ButtonHeight } from '../../../_models/enums/button';
 
 @Component({
   selector: 'app-button',

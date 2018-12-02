@@ -1,7 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 
-import { Item } from '../../../_models/item';
-import { Button } from '../../../_models/button';
+import { Item } from '../../../_models/interfaces/item';
+import { Button } from '../../../_models/enums/button';
 
 @Component({
   selector: 'app-item',

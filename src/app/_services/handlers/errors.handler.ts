@@ -1,7 +1,10 @@
 import {Injectable, ErrorHandler, Injector} from '@angular/core';
 import { HttpErrorResponse } from '@angular/common/http';
+
 import {NotificationService} from '../application/notification.service';
-import {Alert, AlertType} from '../../_models/alert';
+
+import { Alert } from '../../_models/classes/alert';
+import {AlertType} from '../../_models/enums/alert';
 
 @Injectable()
 export class ErrorsHandler extends ErrorHandler {

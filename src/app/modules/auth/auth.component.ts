@@ -4,7 +4,7 @@ import { Component } from '@angular/core';
 import {AuthService} from '../../_services/http/auth.service';
 import {NotificationService} from '../../_services/application/notification.service';
 
-import { Button, ButtonHeight } from '../../_models/button';
+import { Button, ButtonHeight } from '../../_models/enums/button';
 
 @Component({
     selector: 'app-auth',

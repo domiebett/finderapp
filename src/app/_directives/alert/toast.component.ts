@@ -2,7 +2,8 @@ import {Component, Input, NgZone} from '@angular/core';
 
 import {NotificationService} from '../../_services/application/notification.service';
 
-import {Alert, AlertType} from '../../_models/alert';
+import { Alert } from '../../_models/classes/alert';
+import {AlertType} from '../../_models/enums/alert';
 
 @Component({
   selector: 'app-alert',

@@ -20,20 +20,20 @@
         <ul class="user_items dropdown user_options">
           <li>profile</li>
           <li>settings</li>
-          <li>logout</li>
+          <li (click)="logout()">logout</li>
         </ul>
       </div>
     </div>
     
     <div class="mobile_view nav_container">
-      <span (click)="toggleNavigationLinks()">|||</span>
+      <span (click)="toggleNavLinksDropdown()">|||</span>
       <ul *ngIf="displayNavigationLinks" class="navigation_links">
         <li class="navigation_link">items</li>
         <li class="navigation_link">manage account</li>
         <li class="navigation_link">analytics</li>
         <li class="navigation_link">profile</li>
         <li class="navigation_link">settings</li>
-        <li class="navigation_link">logout</li>
+        <li (click)="logout()" class="navigation_link">logout</li>
       </ul>
     </div>
   </nav>

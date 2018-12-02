@@ -8,11 +8,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AuthModule } from './modules/auth/auth.module';
 import { NavigationModule } from './modules/navigation/navigation.module'
 
+import { AppComponent } from './app.component';
+import { ToastComponent } from './_directives/alert/toast.component';
+
+import { AuthGuard } from './_services/guards/auth.guard';
+
+import {ErrorsHandler} from './_services/handlers/errors.handler';
 import { ApiRouteInterceptor } from './_services/interceptors/api-route.interceptor';
 
-import { AppComponent } from './app.component';
-import {ErrorsHandler} from './_services/handlers/errors.handler';
-import { ToastComponent } from './_directives/alert/toast.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +31,7 @@ import { ToastComponent } from './_directives/alert/toast.component';
     HttpClientModule
   ],
   providers: [
+    AuthGuard,
     {
       provide: HTTP_INTERCEPTORS,
       useClass: ApiRouteInterceptor,

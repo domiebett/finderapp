@@ -1,7 +1,10 @@
 import { Injectable } from '@angular/core';
-import {HttpClient, HttpErrorResponse, HttpResponse} from '@angular/common/http';
-import { map, catchError } from 'rxjs/operators';
-import {Observable, throwError } from 'rxjs';
+import {HttpClient} from '@angular/common/http';
+
+import { HttpLoginResponse } from '../../_models/interfaces/auth';
+import { StorageUtils } from '../../_utils/storage.utils';
+
+import { map } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -17,7 +20,12 @@ export class AuthService {
    * @param password - user's password
    */
   login(email: string, password: string) {
-    return this.http.post('auth/login', {email: email, password: password});
+    return this.http.post<HttpLoginResponse>('auth/login', {email: email, password: password})
+      .pipe(
+        map((result) => {
+          StorageUtils.storeLoginDetails(result);
+        })
+      );
   }
 
   /**

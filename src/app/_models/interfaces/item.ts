@@ -13,8 +13,3 @@ export interface Item {
     dateCreated?;
     dateUpdated?;
 }
-
-export enum ItemType {
-    Found = 'FOUND',
-    Lost = 'LOST'
-}

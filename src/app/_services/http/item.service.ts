@@ -1,6 +1,7 @@
-import { Utils } from './../../_utils/utils';
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+
+import { FormatUtils } from '../../_utils/format.utils';
 
 @Injectable({
   providedIn: 'root'
@@ -15,7 +16,7 @@ export class ItemService {
    * @param params
    */
   getItems(params = {}) {
-    const path = `items${Utils.formatParams(params)}`;
+    const path = `items${FormatUtils.formatParams(params)}`;
     return this.http.get(path);
   }
 }
