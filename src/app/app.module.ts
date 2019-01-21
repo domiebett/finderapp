@@ -6,7 +6,8 @@ import { HTTP_INTERCEPTORS, HttpClient } from '@angular/common/http';
 import { ItemsModule } from './modules/items/items.module';
 import { AppRoutingModule } from './app-routing.module';
 import { AuthModule } from './modules/auth/auth.module';
-import { NavigationModule } from './modules/navigation/navigation.module'
+import { NavigationModule } from './modules/navigation/navigation.module';
+import { ModalsModule } from './modules/modals/modals.module';
 
 import { AppComponent } from './app.component';
 import { ToastComponent } from './_directives/alert/toast.component';
@@ -29,6 +30,7 @@ import { ApiRouteInterceptor } from './services/interceptors/api-route.intercept
     AuthModule,
     ItemsModule,
     NavigationModule,
+    ModalsModule,
     AppRoutingModule,
     HttpClientModule
   ],

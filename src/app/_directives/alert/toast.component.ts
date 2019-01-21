@@ -27,6 +27,7 @@ export class ToastComponent {
 
   /**
    * Adds toast messages
+   * Also removes any toast that is above given limit.
    *
    * @param alert
    */

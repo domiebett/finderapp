@@ -23,7 +23,13 @@ body {
     Displays
 /---------------------------------------------*/
 
+.hidden {
+  display: none;
+}
 
+.show {
+  display: block;
+}
 
 /*---------------------------------------------/
     Application Links
