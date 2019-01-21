@@ -3,7 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 
 import { throwError } from 'rxjs';
 
-import { ItemType } from '../../../_models/item';
+import { ItemType } from '../../../_models/enums/item';
 
 @Component({
   selector: 'app-lost-and-found',

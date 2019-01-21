@@ -1,8 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 
-import { Item } from '../../../_models/item';
-import { Color } from '../../../_models/color';
-import { Button } from '../../../_models/button';
+import { Item } from '../../../_models/interfaces/item';
+import { Button } from '../../../_models/enums/button';
 
 @Component({
   selector: 'app-item',
@@ -12,8 +11,9 @@ import { Button } from '../../../_models/button';
 export class ItemComponent implements OnInit {
 
   @Input() item: Item;
+  
   mainImageUrl: string = '../../../../assets/images/no_image.png';
-  actionButtonClass: Button = Button.PrimaryTranslucent;
+  actionButtonClass: Button = Button.PrimaryLightTranslucent;
 
   constructor() { }
 
@@ -21,5 +21,12 @@ export class ItemComponent implements OnInit {
     if (this.item.images.length > 0) {
       this.mainImageUrl = this.item.images[0].url;
     }
+  }
+
+  /**
+   * Action once the view item button is cliced.
+   */
+  onActionButtonClick() {
+    console.log('button clicked');
   }
 }

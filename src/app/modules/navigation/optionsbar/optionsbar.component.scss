@@ -1,0 +1,63 @@
+@import '../../../../assets/partials/colors';
+
+.options_container {
+    width: 90vw;
+    max-width: 1200px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    position: absolute;
+    left: 50vw;
+    top: 100px;
+    transform: translate(-50%, 0);
+
+    .buttons {
+        width: 30px;
+    }
+    .desktop_search {
+        display: block;
+    }
+
+    .mobile_search {
+        display: none;
+    }
+}
+
+@media (max-width: 700px) {
+    .options_container {
+        background-color: $app-white;
+        display: block;
+        position: fixed;
+        width: 100vw;
+        height: 35px;
+        padding: 15px;
+        top: unset;
+        bottom: 0;
+        left: 50vw;
+        z-index: 51;
+
+        .buttons {
+            float: left;
+            padding-left: 15px
+        }
+
+        .items_navigator {
+            float: right;
+            width: 75%;
+            padding-right: 15px;
+        }
+    }
+
+    .desktop_search {
+        visibility: hidden;
+        display: hidden;
+    }
+
+    .mobile_search {
+        display: block;
+        position: absolute;
+        width: 90%;
+        top: 100px;
+        left: 50%;
+        transform: translate(-50%, 0);
+    }
+}

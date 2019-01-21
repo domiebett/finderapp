@@ -20,16 +20,34 @@ body {
 }
 
 /*---------------------------------------------/
+    Displays
+/---------------------------------------------*/
+
+
+
+/*---------------------------------------------/
     Application Links
 /---------------------------------------------*/
 
 .link {
-  color: $app-blue;
   text-decoration: none;
-  display: inline-block;
-  padding: 5px;
-  &:hover {
-    text-decoration: underline;
+  outline: none;
+
+  &.link-inline {
+    display: inline-block;
+  }
+
+  &.link-default {
+    color: $app-blue;
+    padding: 5px;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  &.link-light {
+    color: $app-white;
   }
 }
 

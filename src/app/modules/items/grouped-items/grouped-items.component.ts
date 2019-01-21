@@ -1,9 +1,9 @@
 import { Component, OnInit, Input, OnChanges, SimpleChanges } from '@angular/core';
 
-import { ItemService } from '../../../_services/http/item.service';
+import { ItemService } from '../../../services/http/item.service';
 
-import { ItemType } from './../../../_models/item';
-import { Item } from '../../../_models/item';
+import { ItemType } from '../../../_models/enums/item';
+import { Item } from '../../../_models/interfaces/item';
 
 @Component({
   selector: 'app-grouped-items',

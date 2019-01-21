@@ -1,4 +1,9 @@
-<button class="btn" [ngClass]="[buttonClassName]">
+<button (click)="onClick()" class="btn"
+        [ngClass]="[
+          buttonClassName,
+          buttonHeight,
+          (buttonIsDisabled ? disabledButtonClass : '')
+        ]">
   <span>
     {{ text }}
   </span>

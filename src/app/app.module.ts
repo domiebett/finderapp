@@ -1,17 +1,23 @@
 import { BrowserModule } from '@angular/platform-browser';
 import {ErrorHandler, NgModule} from '@angular/core';
 import { HttpClientModule} from '@angular/common/http';
-import { ItemsModule } from './modules/items/items.module';
+import { HTTP_INTERCEPTORS, HttpClient } from '@angular/common/http';
 
+import { ItemsModule } from './modules/items/items.module';
 import { AppRoutingModule } from './app-routing.module';
 import { AuthModule } from './modules/auth/auth.module';
-
-import { HTTP_INTERCEPTORS, HttpClient } from '@angular/common/http';
-import { ApiRouteInterceptor } from './_services/interceptors/api-route.interceptor';
+import { NavigationModule } from './modules/navigation/navigation.module'
 
 import { AppComponent } from './app.component';
-import {ErrorsHandler} from './_services/handlers/errors.handler';
 import { ToastComponent } from './_directives/alert/toast.component';
+
+import { AuthGuard } from './services/guards/auth.guard';
+
+import { AuthEmitter } from './services/emitters/auth.emitter';
+
+import {ErrorsHandler} from './services/handlers/errors.handler';
+import { ApiRouteInterceptor } from './services/interceptors/api-route.interceptor';
+
 
 @NgModule({
   declarations: [
@@ -22,10 +28,13 @@ import { ToastComponent } from './_directives/alert/toast.component';
     BrowserModule,
     AuthModule,
     ItemsModule,
+    NavigationModule,
     AppRoutingModule,
     HttpClientModule
   ],
   providers: [
+    AuthGuard,
+    AuthEmitter,
     {
       provide: HTTP_INTERCEPTORS,
       useClass: ApiRouteInterceptor,

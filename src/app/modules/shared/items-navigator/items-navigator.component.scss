@@ -1,65 +1,51 @@
+@import '../../../../assets/partials/colors';
+
 .navigators {
-  position: fixed;
-  bottom: 45vh;
-  left: 0;
-  width: 100px;
-  height: 200px;
-  border: 2px solid #4f70b5;
-  border-radius: 0 5px 5px 0;
-  overflow: hidden;
-  z-index: 100;
-  li {
-      position: relative;
-    display: block;
-    height: 50%;
-    width: 100%;
+  width: 100%;
+
+  .navigator {
+    width: 40%;
+    position: relative;
+    display: inline-block;
     list-style-type: none;
-    margin: 0;
-    padding: 0;
+    font-size: 14px;
     text-align: center;
-    background-color: white;
+    background-color: $app-white;
     cursor: pointer;
-    &:hover {
-      background-color: rgba(79, 111, 181, 0.205);
+    height: 30px;
+    border: 2px solid $app-light-gray;
+    border-radius: 25px;
+    outline: none;
+    transition: none;
+
+    &:nth-child(1) {
+      margin-right: 5%;
     }
+
+    &:hover {
+      background-color: $app-light-gray;
+      color: $app-white;
+    }
+
     &.active {
-      background-color: #4f70b5;
+      background-color: $app-light-gray;
+      color: $app-white;
+
       &:hover {
-          background-color: #4f70b5;
+        background-color: $app-light-gray;
+        color: $app-white;
       }
     }
+
     span {
-        position: absolute;
-        display: block;
-      width: 100%;
-      bottom: 10px;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
     }
   }
 }
 
 @media (max-width: 500px) {
-  .navigators {
-    bottom: 0;
-    left: 0;
-    width: 100vw;
-    height: auto;
-    max-height: 50px;
-    border-width: 1px 0 0 0;
-    border-radius: 0;
-    li {
-      height: 100%;
-      width: 50%;
-      padding: 20px 0 20px 0;
-      &:first-child {
-        float: left;
-      }
-      &:last-child {
-        float: right;
-      }
-    }
-  }
-  .container {
-    height: calc(100vh - 120px);
-    margin-left: 5%;
-  }
+  
 }

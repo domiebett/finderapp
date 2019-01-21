@@ -1,8 +1,8 @@
 .container {
-  width: 90%;
-  height: calc(100vh - 80px);
-  margin-top: 65px;
-  margin-left: 8%;
+  width: 95%;
+  max-width: 1200px;
+  height: calc(100vh - 170px);
+  margin: 155px auto 0 auto;
   display: grid;
   grid-template-columns: 20% 20% 20% 20% 20%;
   grid-template-columns: repeat(5, 1fr);
@@ -26,6 +26,7 @@
 @media (max-width: 800px) {
   .container {
     grid-template-columns: repeat(3, 1fr);
+    margin-bottom: 50px;
   }
 }
 
@@ -37,12 +38,11 @@
 
 @media (max-width: 500px) {
   .container {
-    height: calc(100vh - 120px);
-    margin-left: 5%;
+    height: calc(100vh - 210px);
   }
 }
 
-@media (max-width: 350px) {
+@media (max-width: 300px) {
   .container {
     grid-template-columns: 100%;
   }

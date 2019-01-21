@@ -1,8 +1,6 @@
-import { Component, OnInit, Input, Output } from '@angular/core';
-import { text } from '@angular/core/src/render3/instructions';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
-import { Color } from '../../../_models/color';
-import { Button } from '../../../_models/button';
+import { Button, ButtonHeight } from '../../../_models/enums/button';
 
 @Component({
   selector: 'app-button',
@@ -13,12 +11,23 @@ export class ButtonComponent implements OnInit {
 
   @Input() text: string;
   @Input() backgroundOpacity: number;
-  @Input() textColor: Color = Color.White;
   @Input() buttonClassName: Button = Button.Default;
+  @Input() buttonIsDisabled: boolean = false;
+  @Input() buttonHeight: ButtonHeight = ButtonHeight.Medium;
+
+  @Output() clicked = new EventEmitter();
+
+  disabledButtonClass = Button.Disabled;
 
   constructor() { }
 
   ngOnInit() {
   }
 
+  /**
+   * Emits event when clicked
+   */
+  onClick() {
+    this.clicked.emit();
+  }
 }

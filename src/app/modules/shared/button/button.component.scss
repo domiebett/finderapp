@@ -20,7 +20,6 @@ button {
 }
 
 .btn {
-    padding: 15px;
     font-size: 14px;
     border-width: 2px;
     border-style: solid;
@@ -30,19 +29,29 @@ button {
     transition: 0s ease-in-out;
 
     &.btn-primary {
+        border-color: $app-blue;
+        color: $app-white;
+        background-color: $app-blue;
+
+        &:hover {
+            border-color: $app-blue-darker;
+            background-color: $app-blue-darker;
+        }
+    }
+    &.btn-primary-light {
       border-color: $app-blue;
       color: $app-blue;
       &:hover {
-        color: white;
+        color: $app-white;
         background-color: $app-blue;
       }
     }
     &.btn-default {
-        border-color: $app-black;
-        background-color: white;
-        color: $app-black;
+        border-color: $app-light-gray;
+        background-color: $app-white;
+        color: $app-light-gray;
         &:hover {
-            background-color: $app-black;
+            background-color: $app-blue;
             color: $app-white;
         }
     }
@@ -53,4 +62,40 @@ button {
             opacity: $button-translucency;
         }
     }
-  }
+
+    &.btn-rounded {
+        border-radius: 50%;
+    }
+
+    &.btn-disabled {
+        border-color: $app-black-translucent;
+        background-color: $app-black-translucent;
+        color: white;
+        cursor: not-allowed;
+
+        &:hover {
+            background-color: $app-black-translucent;
+            border-color: $app-black-translucent;
+        }
+    }
+
+    &.btn-very-tall {
+        padding: 20px;
+    }
+
+    &.btn-tall {
+        padding: 17px;
+    }
+
+    &.btn-medium {
+        padding: 15px;
+    }
+
+    &.btn-short {
+        padding: 13px;
+    }
+
+    &.btn-very-short {
+        padding: 10px;
+    }
+}

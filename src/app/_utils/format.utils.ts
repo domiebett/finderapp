@@ -1,4 +1,10 @@
-export class Utils {
+export class FormatUtils {
+    
+    /**
+     * Formats Url params
+     * 
+     * @param params - object with url parameter key value pairs
+     */
     static formatParams(params: object = {}) {
         const formattedParams = [];
 
