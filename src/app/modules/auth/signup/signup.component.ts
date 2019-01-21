@@ -26,6 +26,9 @@ export class SignupComponent extends AuthComponent {
       this.model['username'],
       this.model['email'],
       this.model['password']
-    ).subscribe((response) => console.log('Signed up successfully'));
+    ).subscribe((response) => {
+      this.router.navigate(['/login']);
+      this.notificationService.successToast('Signed up successfully. Please login');
+    });
   }
 }

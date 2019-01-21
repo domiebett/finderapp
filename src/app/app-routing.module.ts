@@ -6,10 +6,15 @@ import { SignupComponent } from './modules/auth/signup/signup.component';
 import { ItemsComponent } from './modules/items/items/items.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: '/login', pathMatch: 'full' },
+  // redirects
+  { path: '', redirectTo: '/items/found', pathMatch: 'full' },
+  { path: 'items', redirectTo: '/items/found', pathMatch: 'full' },
+
+  // auth module
   { path: 'login', component: LoginComponent },
   { path: 'signup', component: SignupComponent },
-  { path: 'items', redirectTo: '/items/found', pathMatch: 'full' },
+
+  // items module
   { path: 'items/:type', component: ItemsComponent }
 ];
 
