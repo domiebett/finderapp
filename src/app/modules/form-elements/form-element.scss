@@ -1,0 +1,13 @@
+@import './../../../assets/partials/colors';
+
+div.form_control {
+    margin: 10px 0 10px 0;
+}
+
+input, textarea, select {
+    width: 100%;
+    outline: none;
+    border-width: 0px 0px 2px 0px;
+    border-color: $app-light-gray;
+    font-size: 0.9em;
+}

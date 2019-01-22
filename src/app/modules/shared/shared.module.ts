@@ -1,7 +1,7 @@
 import { RouterModule } from '@angular/router';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { ItemComponent } from './item/item.component';
 import { ItemsNavigatorComponent } from './items-navigator/items-navigator.component';
@@ -12,19 +12,19 @@ import { InflateInputComponent } from './inflate-input/inflate-input.component';
   imports: [
     RouterModule,
     CommonModule,
-    FormsModule
+    FormsModule,
   ],
   exports: [
     ItemComponent,
     ItemsNavigatorComponent,
     ButtonComponent,
-    InflateInputComponent
+    InflateInputComponent,
   ],
   declarations: [
     ItemComponent,
     ItemsNavigatorComponent,
     ButtonComponent,
-    InflateInputComponent
+    InflateInputComponent,
   ],
 })
 export class SharedModule { }

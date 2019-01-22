@@ -1,0 +1,7 @@
+<div class="form_control">
+    <label>{{ label }}</label>
+    <select>
+        <option value="" selected disabled hidden> ~ Select a category ~</option>
+        <option *ngFor="let option of options" value="{{ option.value }}">{{ option.name | titlecase }}</option>
+    </select>
+</div>

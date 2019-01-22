@@ -1,6 +1,6 @@
 <div class="options_container">
   <div class="buttons">
-      <app-button [text]="'+'" [buttonClassName]="addButtonClass">
+      <app-button (clicked)="openAddItemModal()" [text]="'+'" [buttonClassName]="addButtonClass">
       </app-button>
   </div>
 

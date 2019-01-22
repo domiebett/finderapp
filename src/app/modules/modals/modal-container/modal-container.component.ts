@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ModalService } from 'src/app/services/application/modal.service';
 
 @Component({
   selector: 'app-modal-container',
@@ -7,9 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ModalContainerComponent implements OnInit {
 
-  constructor() { }
+  constructor(private modalService: ModalService) { }
 
   ngOnInit() {
+  }
+
+  removeModal() {
+    this.modalService.destroy();
   }
 
 }

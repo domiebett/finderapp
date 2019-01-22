@@ -18,6 +18,7 @@ import { AuthEmitter } from './services/emitters/auth.emitter';
 
 import {ErrorsHandler} from './services/handlers/errors.handler';
 import { ApiRouteInterceptor } from './services/interceptors/api-route.interceptor';
+import { AddItemModalComponent } from './modules/modals/add-item-modal/add-item-modal.component';
 
 
 @NgModule({
@@ -46,6 +47,9 @@ import { ApiRouteInterceptor } from './services/interceptors/api-route.intercept
       provide: ErrorHandler,
       useClass: ErrorsHandler
     }
+  ],
+  entryComponents: [
+    AddItemModalComponent,
   ],
   bootstrap: [AppComponent]
 })
