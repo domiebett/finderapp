@@ -1,0 +1,10 @@
+<div class="form-control">
+  {{ label }}
+  <label class="radio_label" *ngFor="let option of options; let i = index" for="option-{{ i }}">
+    <input [formControl]="control" type="radio" id="option-{{ i }}" name="{{ name }}" value="{{ option.value }}" />
+    <div>
+      {{ option.text }}
+      <span *ngIf="option.popup">{{ option.popup }}</span>
+    </div>
+  </label>
+</div>

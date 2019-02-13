@@ -8,7 +8,11 @@
 
       <app-form-textarea [label]="'Description'" [control]="addItemForm.controls.description"></app-form-textarea>
       
-      <app-form-select [label]="'Category'" [control]="addItemForm.controls.category" [options]="categories"></app-form-select>
+      <app-form-select [label]="'Category'" [control]="addItemForm.controls.category"
+          [options]="categories" [defaultOption]="'Select a category'"></app-form-select>
+
+      <app-form-radio [label]="'Reporter'" [control]="addItemForm.controls.reporter"
+          [name]="'reporter'" [options]="reporterRadioOptions"></app-form-radio>
 
       <app-button [text]="'Add Item'" [buttonClassName]="submitButtonClass"></app-button>
     </form>

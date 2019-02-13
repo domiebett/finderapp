@@ -6,6 +6,7 @@ import { CategoryService } from './../../../services/http/category.service';
 import { Button } from './../../../_models/enums/button';
 
 import { Category } from './../../../_models/interfaces/category';
+import { RadioOption } from './../../../_models/interfaces/radio';
 
 @Component({
   selector: 'app-add-item-modal',
@@ -17,6 +18,7 @@ export class AddItemModalComponent implements OnInit {
   addItemForm: FormGroup;
   submitButtonClass: Button = Button.Primary;
   categories: Category[] = [];
+  reporterRadioOptions: RadioOption[] = [];
 
   constructor(
     private formBuilder: FormBuilder,
@@ -26,6 +28,7 @@ export class AddItemModalComponent implements OnInit {
   ngOnInit() {
     this.createAddItemForm();
     this.getCategories();
+    this.createReporterRadioOptions();
   }
 
   /**
@@ -38,11 +41,23 @@ export class AddItemModalComponent implements OnInit {
   }
 
   /**
+   * Creates radio form options for reporter selection
+   */
+  createReporterRadioOptions() {
+    const reporterRadioOptions = [
+      { text: 'I lost the item', value: 'owner', popup: 'We hope you find it.'},
+      { text: 'I picked the item', value: 'finder', popup: 'We appreciate your help.'}
+    ];
+
+    this.reporterRadioOptions = reporterRadioOptions;
+  }
+
+  /**
    * Formats categories to be used by the dropdown selector
    */
   formatCategoriesForDropdown(categories) {
     return categories.map((category) => {
-      return { name: category.name, value: category.id }
+      return { name: category.name, value: category.id };
     });
   }
 

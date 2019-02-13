@@ -11,6 +11,7 @@ import { FormElementComponent } from '../form-element.component';
 export class FormSelectComponent extends FormElementComponent {
 
   @Input() options: string[] = [];
+  @Input() defaultOption = 'Select an option';
 
   constructor() {
     super();

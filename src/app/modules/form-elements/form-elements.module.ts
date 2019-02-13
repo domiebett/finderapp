@@ -5,6 +5,7 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { FormInputComponent } from './form-input/form-input.component';
 import { FormSelectComponent } from './form-select/form-select.component';
 import { FormTextareaComponent } from './form-textarea/form-textarea.component';
+import { FormRadioComponent } from './form-radio/form-radio.component';
 
 @NgModule({
   imports: [
@@ -15,12 +16,14 @@ import { FormTextareaComponent } from './form-textarea/form-textarea.component';
   declarations: [
     FormInputComponent,
     FormSelectComponent,
-    FormTextareaComponent
+    FormTextareaComponent,
+    FormRadioComponent
   ],
   exports: [
     FormInputComponent,
     FormSelectComponent,
-    FormTextareaComponent
+    FormTextareaComponent,
+    FormRadioComponent
   ]
 })
 export class FormElementsModule { }

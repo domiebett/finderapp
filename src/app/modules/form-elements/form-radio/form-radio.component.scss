@@ -1,0 +1,73 @@
+@import '../../../../assets/partials/colors';
+
+.form-control {
+    margin-top: 15px;
+    
+    label {
+        margin-left: 5%;
+        width: 95%;
+    }
+}
+
+label.radio_label {
+    position: relative;
+    display: block;
+    width: 100%;
+    margin: 2px 0 0;
+    padding: 5px 0;
+    
+    input[type="radio"] {
+        width: unset;
+        position: relative;
+        display: inline-block;
+        margin-top: 3px;
+        margin-right: 15px;
+        font-size: 12px;
+        float: left;
+        z-index: 1;
+
+        &:checked + div span {
+            position: absolute;
+            display: inline-block;
+            left: 100%;
+            top: -5px;
+            margin: 0 0 0 20px;
+            padding: 8px 15px;
+            font-size: 12px;
+            font-weight: 400;
+            color: $app-white;
+            text-align: center;
+            white-space: nowrap;
+            background-color: rgba($app-black,0.9);
+            border-radius: 4px;
+            box-shadow: 0 0 10px rgba($app-black,0.2);
+            clear: both;
+            visibility: visible;
+            transform: translateX(0px);
+            transition: transform 200ms ease;
+
+            &:before {
+                position: absolute;
+                content: '';
+                top: 4px;
+                left: -1px;
+                border-top: 8px solid transparent;
+                border-right: 8px solid transparent;
+                border-bottom: 8px solid rgba($app-black,0.9);
+                transform: rotate(45deg);
+            }
+        }
+    }
+    
+    div {
+        position: relative;
+        display: inline-block;
+        
+        span {
+            position: absolute;
+            visibility: hidden;
+            transform: translateX(-10px);
+            transition: transform 200ms ease;
+        }
+    }
+}
