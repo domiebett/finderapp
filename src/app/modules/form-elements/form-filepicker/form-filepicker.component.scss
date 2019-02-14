@@ -1,0 +1,42 @@
+@import '../../../../assets/partials/colors';
+
+input {
+    width: unset;
+}
+
+.form_control {
+    width: 100%;
+
+    label {
+        position: relative;
+        margin: 0 auto;
+        display: block;
+        width: 50%;
+        min-width: 200px;
+        height: 150px;
+        border-radius: 5px;
+        border: 1px dashed $app-blue;
+        transition: 0.1s ease-in;
+        cursor: pointer;
+
+        &:hover {
+            background-color: $app-very-light-gray;
+        }
+
+        &:active {
+            transform: scale(0.99);
+        }
+
+        input {
+            opacity: 0;
+        }
+
+        span {
+            position: absolute;
+            display: inline-block;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+        }
+    }
+}

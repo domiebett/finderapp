@@ -1,0 +1,11 @@
+@import '../../../../assets/partials/colors';
+
+.modal_header {
+    .modal_title {
+        color: $app-blue;
+    }
+}
+
+.form_control {
+    border-top: 1px dotted $app-black;
+}

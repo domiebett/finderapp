@@ -1,0 +1,10 @@
+<div class="form_control">
+  {{ label }}
+  <label for="file_picker">
+    <input [formControl]="control" type="file" id="file_picker"
+        (change)="onFileChange($event)" accept="image/*">
+    <span>
+      {{ prompt }}
+    </span>
+  </label>
+</div>

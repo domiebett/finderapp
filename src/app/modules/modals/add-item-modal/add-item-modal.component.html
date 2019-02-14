@@ -1,6 +1,6 @@
 <div class="modal_holder">
   <div class="modal_header">
-    <h4>Add Item.</h4>
+    <h4 class="modal_title">Add Item.</h4>
   </div>
   <div class="modal_body">
     <form (ngSubmit)="onSubmit()" [formGroup]="addItemForm">
@@ -13,6 +13,8 @@
 
       <app-form-radio [label]="'Reporter'" [control]="addItemForm.controls.reporter"
           [name]="'reporter'" [options]="reporterRadioOptions"></app-form-radio>
+      
+      <app-form-filepicker [control]="addItemForm.controls.file"></app-form-filepicker>
 
       <app-button [text]="'Add Item'" [buttonClassName]="submitButtonClass"></app-button>
     </form>

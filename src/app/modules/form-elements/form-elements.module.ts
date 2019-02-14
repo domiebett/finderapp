@@ -6,6 +6,7 @@ import { FormInputComponent } from './form-input/form-input.component';
 import { FormSelectComponent } from './form-select/form-select.component';
 import { FormTextareaComponent } from './form-textarea/form-textarea.component';
 import { FormRadioComponent } from './form-radio/form-radio.component';
+import { FormFilepickerComponent } from './form-filepicker/form-filepicker.component';
 
 @NgModule({
   imports: [
@@ -17,13 +18,15 @@ import { FormRadioComponent } from './form-radio/form-radio.component';
     FormInputComponent,
     FormSelectComponent,
     FormTextareaComponent,
-    FormRadioComponent
+    FormRadioComponent,
+    FormFilepickerComponent
   ],
   exports: [
     FormInputComponent,
     FormSelectComponent,
     FormTextareaComponent,
-    FormRadioComponent
+    FormRadioComponent,
+    FormFilepickerComponent
   ]
 })
 export class FormElementsModule { }

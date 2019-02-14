@@ -69,7 +69,8 @@ export class AddItemModalComponent implements OnInit {
       name: '',
       description: '',
       reporter: '',
-      category: ''
+      category: '',
+      file: null
     });
   }
 
