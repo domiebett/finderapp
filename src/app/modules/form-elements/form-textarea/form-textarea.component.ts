@@ -8,6 +8,9 @@ import { FormElementComponent } from '../form-element.component';
 })
 export class FormTextareaComponent extends FormElementComponent {
 
+  @Input() minLength = 10;
+  @Input() maxLength = 100;
+
   constructor() {
     super();
   }

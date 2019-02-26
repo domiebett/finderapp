@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder } from '@angular/forms';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 
 import { CategoryService } from './../../../services/http/category.service';
 
@@ -45,8 +45,8 @@ export class AddItemModalComponent implements OnInit {
    */
   createReporterRadioOptions() {
     const reporterRadioOptions = [
-      { text: 'I lost the item', value: 'owner', popup: 'We hope you find it.'},
-      { text: 'I picked the item', value: 'finder', popup: 'We appreciate your help.'}
+      { text: 'I lost the item', value: 'owner', popup: 'Sorry for that. We hope you find it.'},
+      { text: 'I picked the item', value: 'finder', popup: 'Thank you. We appreciate your help.'}
     ];
 
     this.reporterRadioOptions = reporterRadioOptions;
@@ -66,15 +66,21 @@ export class AddItemModalComponent implements OnInit {
    */
   createAddItemForm() {
     this.addItemForm = this.formBuilder.group({
-      name: '',
-      description: '',
-      reporter: '',
-      category: '',
+      name: ['', [ Validators.required, Validators.minLength(2) ]],
+      description: ['', [ Validators.required, Validators.minLength(5) ]],
+      reporter: ['', Validators.required ],
+      category: ['', Validators.required ],
       file: null
     });
   }
 
+  /**
+   * On form submission
+   */
   onSubmit() {
-    console.log(this.addItemForm.value);
+    console.log('form value', this.addItemForm.value);
+    if (this.addItemForm.invalid) {
+      console.log('the form is invalid');
+    }
   }
 }

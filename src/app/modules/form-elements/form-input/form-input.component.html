@@ -1,6 +1,6 @@
 <div class="form_control">
   <label>
     {{ label }} : <br>
-    <input type="{{ type }}" [formControl]="control" />
+    <input type="{{ type }}" [formControl]="control" minlength="{{ minLength }}" maxlength="{{ maxLength }}" required="{{ required }}" />
   </label>
 </div>

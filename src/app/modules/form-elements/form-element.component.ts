@@ -7,6 +7,7 @@ import { FormControl } from '@angular/forms';
 export class FormElementComponent {
     @Input() control: FormControl;
     @Input() label: string;
+    @Input() required = true;
 
     constructor() { }
 }

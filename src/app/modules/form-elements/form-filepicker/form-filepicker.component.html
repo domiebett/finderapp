@@ -2,7 +2,7 @@
   {{ label }}
   <label for="file_picker">
     <input [formControl]="control" type="file" id="file_picker"
-        (change)="onFileChange($event)" accept="image/*">
+        (change)="onFileChange($event)" accept="image/*" required="{{ required }}">
     <span>
       {{ prompt }}
     </span>

@@ -3,7 +3,7 @@
     <h4 class="modal_title">Add Item.</h4>
   </div>
   <div class="modal_body">
-    <form (ngSubmit)="onSubmit()" [formGroup]="addItemForm">
+    <form (ngSubmit)="onSubmit()" #f="ngForm" [formGroup]="addItemForm" novalidate>
       <app-form-input [label]="'Name'" [control]="addItemForm.controls.name"></app-form-input>
 
       <app-form-textarea [label]="'Description'" [control]="addItemForm.controls.description"></app-form-textarea>
@@ -14,7 +14,7 @@
       <app-form-radio [label]="'Reporter'" [control]="addItemForm.controls.reporter"
           [name]="'reporter'" [options]="reporterRadioOptions"></app-form-radio>
       
-      <app-form-filepicker [control]="addItemForm.controls.file"></app-form-filepicker>
+      <app-form-filepicker [control]="addItemForm.controls.file" [required]="false"></app-form-filepicker>
 
       <app-button [text]="'Add Item'" [buttonClassName]="submitButtonClass"></app-button>
     </form>

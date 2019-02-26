@@ -1,6 +1,6 @@
 <div class="form_control">
     <label>
         {{ label }} : <br>
-        <textarea [formControl]="control"></textarea>
+        <textarea [formControl]="control" maxlength="maxLength" minlength="minLength" required="{{ required }}"></textarea>
     </label>
 </div>

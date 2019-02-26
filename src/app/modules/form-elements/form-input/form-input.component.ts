@@ -9,7 +9,9 @@ import { FormElementComponent } from '../form-element.component';
   styleUrls: ['./../form-element.scss', './form-input.component.scss']
 })
 export class FormInputComponent extends FormElementComponent {
-  @Input() type: string = 'text';
+  @Input() type = 'text';
+  @Input() minLength = 2;
+  @Input() maxLength = 20;
 
   constructor() {
     super();
